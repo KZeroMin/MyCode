@@ -30,6 +30,9 @@ void Sort::sorting(){
 }
 
 void Sort::print_result(){
+    get_input();
+    sorting();
+
     for(int i=1; i<=N_line; i++){
         cout << arr[i] << '\n';
     }
@@ -40,8 +43,6 @@ int main(){
     cin >> Num_line;
 
     Sort sorting(Num_line);
-    sorting.get_input();
-    sorting.sorting();
     sorting.print_result();
 
     return 0;
