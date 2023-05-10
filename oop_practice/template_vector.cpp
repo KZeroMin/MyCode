@@ -12,7 +12,7 @@ template <typename T>
 class VectorCreator {
 public:
     string getInputString();
-    vector<T> createVectorFromInput(const string& inputString);
+    vector<T> createVectorFromInput(const string& inputString); // const를 사용함으로써, 함수 내부에서 맴버 변수를 수정할 수 없도록 할 수 있다.
     string printVectorToString(const vector<T>& container);
 
 private:
