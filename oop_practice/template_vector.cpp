@@ -1,12 +1,41 @@
 #include <iostream>
 #include <vector>
 #include <sstream>
+
 using namespace std;
 
 //  Todo
 //  원하는 자료형의 type에 따라 유동적으로 데이터를 저장할 수 있도록 해보자 -> input을 우선 string형태로 받도록 구현
 //  컴파일러가 T 부분에 원하는 타입으로 채워서 코드를 생성한다 -> C++에서는 이를 template이라는 이름으로 지원하고 있다
 //  확장 가능성: input data를 저장하는 요소로 template vector를 사용하는 객체를 생성할 경우, 사용될 수 있을 것
+
+// REMARK
+// 문법을 이렇게 공부해볼 수는 있지만, 실용성이 좀 부족한 클래스입니다
+// 리뷰를 해보면
+// 1. Template는 주로 해더 안에서 처리합니다. 지금처럼 구현을 밖으로 뽑아내지말고, 간명하게 자바처럼 클래스 안에서 다 처리해도 됩니다.
+// 2. VectorCreator는 좋은 이름이 아닙니다. 이 클래스 이름을 본 사람이 무엇을 생각할지 다시 생각해 보세요.
+// 3. getInputString() 함수는 이 클래스의 멤버일 필요가 없습니다.
+// 4. createVectorFromInput 함수가 실은 이 클래스의 핵심 기능을 가지고 있는데 이것은 아래처럼 함수로 끝내면 될 것 같아요
+//    실제로 의미가 있는 T는 string 정도일 듯 해서 다음의 함수도 생각해보시기 바랍니다.
+
+namespsace {
+    auto split(string in, char delim) -> vector<string>
+    {
+        vector<string> result;
+        stringstream ss(in);
+
+        string item;
+        while (getline(ss, item, delim))
+            result.push_back(item);
+
+        return result;
+    }
+}
+
+// 5.createVectorFromInput 이 클래스에 있을필요가 없습니다.
+// 미루어 짐작컨데 인자가 없는 다음의 함수를 짜고싶었던 것 아니었나요?
+// string VectorCreator<T>::ToString()
+
 
 template <typename T>
 class VectorCreator {
