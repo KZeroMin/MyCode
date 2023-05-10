@@ -3,6 +3,12 @@
         "ostream": "cpp",
         "iostream": "cpp",
         "*.tcc": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "__bit_reference": "cpp",
+        "__split_buffer": "cpp",
+        "string": "cpp",
+        "iosfwd": "cpp",
+        "istream": "cpp",
+        "system_error": "cpp"
     }
 }
