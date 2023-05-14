@@ -48,9 +48,8 @@ int main(int argc, char* argv[])
   //  For the expected results, the following code can be applied.
 
   cout << "\n";
-  for(size_t i=2; i < res.size(); i++){
-    cout << res[i] << " "; 
-  }
+  for(size_t i=2; i < res.size(); i++)
+    cout << res[i] << " ";
 
   return 0;
 }
