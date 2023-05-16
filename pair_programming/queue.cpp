@@ -7,8 +7,8 @@ template <typename T>
 class Queue
 {
 public:
-    void push(int in){
-        elements.push_back(in);
+    void push(const T& element){
+        elements.push_back(element);
     }
 
     void pop()
