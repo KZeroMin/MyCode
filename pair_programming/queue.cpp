@@ -17,21 +17,33 @@ public:
         {
             elements.pop_front();
         }
-    }
-
-    void front()
-    {
-        if(elements.size() != 0)
+        else
         {
-            cout << elements.front() << endl;
+            throw out_of_range("Queue is empty!");
         }
     }
 
-    void back()
+    T front()
     {
         if(elements.size() != 0)
         {
-            cout << elements.back() << endl;
+            return elements.front();
+        }
+        else
+        {
+            throw out_of_range("Queue is empty!");
+        }
+    }
+
+    T back()
+    {
+        if(elements.size() != 0)
+        {
+            return elements.back();
+        }
+        else
+        {
+            throw out_of_range("Queue is empty!");
         }
     }
 
@@ -47,15 +59,16 @@ private:
 int main()
 {
     Queue<int> int_queue;
+    int_queue.pop();
     int_queue.push(1);
     int_queue.push(2);
-    int_queue.back();
+    cout << int_queue.back() << endl;
     int_queue.push(3);
     int_queue.push(4);
-    int_queue.front();
+    cout << int_queue.front() << endl;
 
     int_queue.pop();
-    int_queue.front();
+    cout << int_queue.front() << endl;
     cout << int_queue.empty() << endl;
 
     return 0;    
