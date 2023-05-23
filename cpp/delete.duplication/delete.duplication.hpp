@@ -52,6 +52,6 @@ auto join(const vector<T>& v) -> string
                       ""s,
                       [](const auto& l, const auto& r)
                       {
-                          return l.empty() ? r : l + " " + r;   //  람다 표현식([](const auto& l, const auto& r) { ... }): 이항 연산 정의 ->  accumulate 함수가 요소들을 결합하는 방법을 지정
+                          return l.empty() ? r : l + " " + r;   //  Lambda expression: ([](const auto& l, const auto& r) { ... }) ->  Specify how the accumulate function combines elements
                       });
 }
