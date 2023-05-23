@@ -60,7 +60,7 @@ int main()
     string s = "my my name is is kim kim kim young min min this this order may may be broken broken broken";
     const vector<string> origin = convert_string_into_vector(s);
     string out = to_string(get_unique_word(origin));
-
+    
     assert(out == "be broken is kim may min my name order this young");
 
     return 0;
