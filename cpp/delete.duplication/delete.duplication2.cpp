@@ -1,5 +1,6 @@
 #include <iostream>
 #include <sstream>
+#include <numeric>
 #include <algorithm>
 #include <vector>
 #include <cassert>
@@ -41,25 +42,25 @@ vector<string> get_unique_word(vector<string> v)
     return string_vector;
 }
 
-string to_string(vector<string> v)
+template<typename T>
+auto join(const vector<T>& v) -> string
 {
-    string out = "";
-
-    for (string w : v)
-    {
-        out = out + w + ' ';
-    }
-
-    out.pop_back();
-
-    return out;
+    return accumulate(v.begin(),
+                      v.end(),
+                      ""s,
+                      [](const auto& l, const auto& r)
+                      {
+                          return l.empty() ? r : l + " " + r;   //  람다 표현식([](const auto& l, const auto& r) { ... }): 이항 연산 정의 ->  accumulate 함수가 요소들을 결합하는 방법을 지정
+                      });
 }
+
 
 int main()
 {   
     string s = "my my name is is kim kim kim young min min this this order may may be broken broken broken";
     const vector<string> origin = convert_string_into_vector(s);
-    string out = to_string(get_unique_word(origin));
+    string out = join(get_unique_word(origin));
+    cout << out << endl;
     
     assert(out == "be broken is kim may min my name order this young");
 
