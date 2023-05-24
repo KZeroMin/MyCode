@@ -1,4 +1,5 @@
 #include <iostream>
+#include <algorithm>
 #include <vector>
 #include <cmath>
 
@@ -6,127 +7,135 @@ using namespace std;
 
 class MultiPerceptronLayer
 {
-    public:
-        MultiPerceptronLayer(int epoch, vector<double> inputs, double threshold, int inputSize, int outputSize, int weight_dim, int learningRate)
+public:
+    MultiPerceptronLayer(int _epoch, int _input_size, int _output_size, int _weight_dim, double _learning_rate, double _threshold) : 
+    epoch(_epoch), 
+    input_size(_input_size), 
+    output_size(_output_size), 
+    weight_dim(_weight_dim), 
+    learning_rate(_learning_rate), 
+    threshold(_threshold),
+    weight_vector(_weight_dim, vector<double>(_weight_dim, 0))
+    {
+        // layer1
+        weight_vector[0][0] = 0.1;
+        weight_vector[1][0] = 0.2;
+        // layer2
+        weight_vector[0][1] = 0.3;
+        weight_vector[1][1] = 0.4;
+
+        cout << "Instance maked!" << endl;
+    }
+
+    auto sigmoid(double x) -> double
+    {
+        return 1.0 / (1.0 - exp(-x)); 
+    }
+
+    auto softmax(const vector<double>& logits) -> vector<double>
+    {
+        double sumExp = 0.0;
+        vector<double> predicates;
+        double max_logit = *max_element(logits.begin(), logits.end());  // get max value in logits
+
+
+        for (size_t i = 0; i < logits.size(); i++) 
         {
-            weights1.resize(weight_dim, vector<double>(weight_dim, 0));    // vector size initilize
-            weights1[0][0] = 0.1;
-            weights1[0][1] = 0.2;
-            weights1[1][0] = 0.3;
-            weights1[1][1] = 0.4;
-
-            weights2.resize(weight_dim, vector<double>(weight_dim, 0));    // vector size initilize
-            weights2[0][0] = 0.1;
-            weights2[0][1] = 0.2;
-            weights2[1][0] = 0.3;
-            weights2[1][1] = 0.4;
-
-            threshold = threshold;
-
-            inputs = inputs;
-            epoch = epoch;
-
-            cout << weights1[0][1] << endl;
+            double expValue = exp(logits[i] - max_logit); // calculate exp, except max logit(to make stable condition)
+            sumExp += expValue;
+            predicates.push_back(expValue);
         }
 
-        auto sigmoid(double x) -> double
+        for(size_t i = 0; i < predicates.size(); i++)
         {
-            return 1.0 / (1.0 - exp(-x));
+            predicates[i] /= sumExp;    // value normalizing
         }
 
-        auto forward() -> vector<double>
+        return predicates;
+    }
+
+    auto cross_entropy(const vector<double>& predicates) -> double
+    {
+        double loss = 0.0;
+
+        for(size_t i = 0; i< predicates.size(); i++)
         {
-            vector<double> ffnn_output;
-
-            for(int i=0; i<outputSize; i++)
-            {
-                double cur_sum = 0.0;
-
-                for(int j; j<inputSize; j++)
-                    cur_sum += inputs[j] * weights1[i][j];
-                    
-                ffnn_before_output1[i] = cur_sum;
-                //ffnn_output[i] = sigmoid(cur_sum);
-                ffnn_output.push_back(sigmoid(cur_sum));
-            }
-
-            for(int i=0; i<outputSize; i++)
-            {
-                double cur_sum = 0.0;
-                for(int j; j<inputSize; j++)
-                    cur_sum += ffnn_output[j] * weights2[i][j];
-
-                ffnn_before_output2[i] = cur_sum;
-                output[i] = cur_sum;
-            }
-            
-
-            return output; // sigmoid 통과하기 전 z들 => 저장할건지?
+            loss += input_vector[i] * log(predicates[i]);
         }
+
+        loss = -loss / predicates.size();
+
+        return loss;
+    }
+
+    auto forward() -> vector<double>
+    {
+        vector<double> ffnn_output1;
+        vector<double> ffnn_output2;
+
+        for(int i=0; i<weight_dim; i++) //  calculate layer1
+        {
+            double node_value = 0;
+
+            for(int j=0; j<input_size; j++)
+                node_value += input_vector[j] * weight_vector[i][0];
+
+            ffnn_output1.push_back( sigmoid(node_value) );
+        }
+
+        for(int i=0; i<weight_dim; i++) //  calculate layer2
+        {
+            double node_value = 0;
+
+            for(int j=0; j<input_size; j++)
+                node_value += ffnn_output1[j] * weight_vector[i][1];
+
+            ffnn_output2.push_back(node_value);
+        }
+
+        return softmax(ffnn_output2);
+    }
+
+    void learn()
+    {
         
-        /*
-        auto backword(vector<double> output) -> vector<double>
-        {
-            vector<double> forward_output = forward();
-            
-            double gab = 1.0;
-            gab *= -(y1 - sigmoid(forward_output[0]));
-            gab *= -(y1 - sigmoid(forward_output[0]));
+    }
 
+    void learning()
+    {
 
-            weights[0][0] = weights[0][0] - learningRate * gab;
-        }
-        */
+    }
 
-        /*
-        double learning()
-        {
-            return abs(forward() - backword());
-        }
-
-        void model_learning()
-        {   
-            for(int i = 0; i < epoch; i++)
-                if(learning() < threshold) break;
-        }
-        */
-
-    private:
-        vector<vector<double>> weights1;
-        vector<vector<double>> weights2;
-        vector<double> ffnn_before_output1;
-        vector<double> ffnn_before_output2;
-        vector<double> inputs;
-        vector<double> output;
-        int epoch;
-        int inputSize;
-        int outputSize;
-        int weight_dim;
-        int learningRate;
-        double threshold;
+private:
+    int epoch;
+    int input_size;
+    int output_size;
+    int weight_dim;
+    double learning_rate;
+    double threshold;    
+    vector<vector<double>> weight_vector;
+    vector<double> input_vector;
+    vector<double> output_vector;
 };
 
-int main(int argv, char**argc){
-    int epoch = 10;
-    int inputSize = 2;
-    int outputSize = 2;
-    int weight_dim = 2;
-    int learningRate= 0.5;
-    double threshold = 0.3;
+int main()
+{
+    // set hyper parameters
+    int epoch, input_size, output_size, weight_dim;
+    double threshold, learning_rate;
 
-    vector<double> inputs;
-    inputs[0] = 0.5;
-    inputs[1] = 0.4;
-    //inputs[2] = 0.8;
+    epoch = 10;
+    input_size = 2;
+    output_size = 2;
+    weight_dim = 2;
+    threshold = 0.3;
+    learning_rate = 0.01;
 
-    MultiPerceptronLayer mlp(epoch, inputs, threshold, inputSize, outputSize, weight_dim, learningRate);
+    cout << "Check complier1" << endl;
+    MultiPerceptronLayer mlp(epoch, input_size, output_size, weight_dim, learning_rate, threshold);
+    cout << "Check complier2" << endl;
 
-    cout << "Hello\n";
     
-    for(double w : mlp.forward())
-    {
-        cout << w << endl;
-    }
 
     return 0;
 }
