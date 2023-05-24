@@ -3,15 +3,20 @@
 
 using namespace std;
 
+//
+// refactor pascal.cpp with feedback, and fast speed.
+//
+
+
 class Pascal
 {
 public:
-    Pascal(int size) 
-        : height(size)
-        , elemets(size, vector<int>(size, 0)) 
-    {} // use member initializer
+    Pascal(int _height) 
+        : height(_height)
+        , elements(_height, vector<int>(_height, 0))
+    {}
 
-    Pascal() = delete;  //  기본 생성자를 삭제함으로써 호출을 금지
+    Pascal() = delete;
 
     void build()
     {
@@ -19,28 +24,28 @@ public:
         {
             for (int col = 0; col <= row; col++)
             {
-                elemets[row][col] = (col == 0 || col == row)
+                elements[row][col] = (col == 0 || row == col) 
                     ? 1
-                    : elemets[row - 1][col - 1] + elemets[row - 1][col];
+                    : elements[row-1][col-1] + elements[row-1][col]; 
             }
         }
     }
 
     auto to_s() -> string
     {
-        string result{};
+        string result = {};
 
-        for (const auto& row : elemets)
+        for (const auto& row : elements)
         {
             for (const auto& element : row)
             {
-                if (element == 0) 
+                if (element != 0)
+                    result += (to_string(element) + " ");
+                else
                     break;
-
-                result += to_string(element) + " ";  
             }
-            
-            result += '\n';
+
+            result += "\n";
         }
 
         return result;
@@ -48,7 +53,7 @@ public:
 
 private:
     int height;
-    vector<vector<int>> elemets;
+    vector<vector <int>> elements;
 };
 
 int main()
