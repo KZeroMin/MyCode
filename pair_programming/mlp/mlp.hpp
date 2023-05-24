@@ -7,6 +7,7 @@
 
 using namespace std;
 
+// NOTICE: 클래스 이름이 이상합니다. MLP: Multiple Layer Perceptron
 class MultiPerceptronLayer
 {
 public:
@@ -26,6 +27,7 @@ public:
         // layer1
         weight_vector[0][0] = 0.1;
         weight_vector[1][0] = 0.2;
+        
         // layer2
         weight_vector[0][1] = 0.3;
         weight_vector[1][1] = 0.4;
@@ -50,10 +52,8 @@ public:
             predicates.push_back(expValue);
         }
 
-        for(size_t i = 0; i < predicates.size(); i++)
-        {
+        for (size_t i = 0; i < predicates.size(); i++)
             predicates[i] /= sumExp;    // value normalizing
-        }
 
         return predicates;
     }
@@ -62,10 +62,8 @@ public:
     {
         double loss = 0.0;
 
-        for(size_t i = 0; i< predicates.size(); i++)
-        {
+        for (size_t i = 0; i< predicates.size(); i++)
             loss += input_vector[i] * log(predicates[i]);
-        }
 
         loss = -loss / predicates.size();
 
@@ -81,17 +79,17 @@ public:
         {
             double node_value = 0;
 
-            for(int j=0; j<input_size; j++)
+            for (int j=0; j<input_size; j++)
                 node_value += input_vector[j] * weight_vector[i][0];
 
-            ffnn_output1.push_back( sigmoid(node_value) );
+            ffnn_output1.push_back(sigmoid(node_value));
         }
 
-        for(int i=0; i<weight_dim; i++) //  calculate layer2
+        for (int i=0; i<weight_dim; i++) //  calculate layer2
         {
             double node_value = 0;
 
-            for(int j=0; j<input_size; j++)
+            for (int j=0; j<input_size; j++)
                 node_value += ffnn_output1[j] * weight_vector[i][1];
 
             ffnn_output2.push_back(node_value);
