@@ -133,18 +133,20 @@ public:
         {
             learn(input_size, output_size, weight_dim);
 
-            show_weights();
+            show_weights(i);
 
-            if (weight_vector[0][0] < threshold)
+            if (weight_vector[0][0] < threshold) // 여기 cross_entropy를 이용하나?
                 break;
         }
     }
 
-    void show_weights()
+    void show_weights(int i)
     {
-        cout << "weight_vectors" << endl;
-        cout << weight_vector[0][0] << endl;
-        cout << weight_vector[0][1] << endl;
+        cout << i << "th weight_vectors" << endl;
+        cout << "weight_vector[0][0] : " << weight_vector[0][0] << endl;
+        cout << "weight_vector[0][1] : " << weight_vector[0][1] << endl;
+        cout << "weight_vector[1][0] : " << weight_vector[1][0] << endl;
+        cout << "weight_vector[1][1] : " << weight_vector[1][1] << endl;
     }
 
 private:
