@@ -3,19 +3,21 @@
 
 using namespace std;
 
+//  N-Queen: 크기가 N × N인 체스판 위에 퀸 N개를 서로 공격할 수 없게 놓는 문제
+
 class N_Queens {
 public:
     N_Queens(int _size)
         : size(_size),
-          cnt(0),
+          n_queen(0),
           counts(0),
           board(new int[_size]) {}
 
-    auto check() -> bool 
+    auto go() -> bool 
     {
-        for (int i = 0; i < cnt; i++) 
+        for (int i = 0; i < n_queen; i++) 
         {
-            if (board[cnt] == board[i] || cnt - i == abs(board[cnt] - board[i]))
+            if (board[n_queen] == board[i] || n_queen - i == abs(board[n_queen] - board[i]))
                 return false;
         }
         return true;
@@ -23,20 +25,20 @@ public:
 
     auto backtrack() -> void 
     {
-        if (cnt == size) 
+        if (n_queen == size) 
         {
             counts++;
         }
 
         for (int i = 0; i < size; i++) 
         {
-            board[cnt] = i;
+            board[n_queen] = i;
 
-            if (check()) 
+            if (go()) 
             {
-                cnt = cnt + 1;
+                n_queen = n_queen + 1;
                 backtrack();
-                cnt = cnt - 1; // backtracking을 위해 이전 상태로 돌아감
+                n_queen = n_queen - 1; 
             }
         }
     }
@@ -48,7 +50,7 @@ public:
 
 private:
     int size;
-    int cnt;
+    int n_queen;
     int counts;
     int* board;
 };
@@ -56,6 +58,7 @@ private:
 int main() {
     N_Queens queens(5);
     queens.backtrack();
-    cout << queens.get_count() << endl;
+    cout << queens.go() << endl;
+    
     return 0;
 }
