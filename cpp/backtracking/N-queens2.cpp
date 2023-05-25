@@ -42,21 +42,13 @@ auto backtrack(int *board, int length, int n_queen) -> int
 }
 
 
-auto get_count() -> int const
-{
-    return count;
-}
-
-
 int main()
 {   
     int result;
-    int count = 0;
     int length = 8;
     int *board = new int[length];
 
-    backtrack(board, length, 0);
-    result = get_count();
+    result = backtrack(board, length, 0);
     assert(result = 92);
     delete[] board;
 
