@@ -1,11 +1,13 @@
 #include <iostream>
+#include <cassert>
 #include <cmath>
 
 using namespace std;    
 
 //  N-queens, but no class
+int count = 0;
 
-auto go() -> bool const
+auto go(int *board, int n_queen) -> bool const
 {
     for (int i = 0; i < n_queen; i++)
     {
@@ -16,7 +18,7 @@ auto go() -> bool const
     return true;
 }
 
-auto backtrack(int *board, int length, int n_queen, int count) -> int
+auto backtrack(int *board, int length, int n_queen) -> int
 {
     for (int i = 0; i < length; i++)
     {
@@ -28,30 +30,34 @@ auto backtrack(int *board, int length, int n_queen, int count) -> int
             return 0;
         }
 
-        if (go())
+        if (go(board, n_queen))
         {
             n_queen++;
-            backtrack();
+            backtrack(board, length, n_queen);
             n_queen--; 
         }
     }
 
-    return 0;
+    return count;
 }
+
 
 auto get_count() -> int const
 {
     return count;
 }
 
+
 int main()
-{
+{   
+    int result;
+    int count = 0;
     int length = 8;
     int *board = new int[length];
 
-    backtrack();
-    cout << get_count(board, length, 0, 0) << endl;
-
+    backtrack(board, length, 0);
+    result = get_count();
+    assert(result = 92);
     delete[] board;
 
     return 0;

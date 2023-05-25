@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cassert>
 #include <cmath>
 
 using namespace std;
@@ -56,9 +57,13 @@ private:
 };
 
 int main() {
-    N_Queens queens(5);
+    int result;
+
+    N_Queens queens(8);
     queens.backtrack();
-    cout << queens.go() << endl;
+    result = queens.get_count();
+
+    assert(result = 92);
     
     return 0;
 }
