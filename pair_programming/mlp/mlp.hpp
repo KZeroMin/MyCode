@@ -8,10 +8,10 @@
 using namespace std;
 
 // NOTICE: 클래스 이름이 이상합니다. MLP: Multiple Layer Perceptron
-class MultiPerceptronLayer
+class MultipleLayerPerceptron
 {
 public:
-    MultiPerceptronLayer(int _epoch, int _input_size, int _output_size, int _weight_dim, double _learning_rate, double _threshold) : 
+    MultipleLayerPerceptron(int _epoch, int _input_size, int _output_size, int _weight_dim, double _learning_rate, double _threshold) : 
     epoch(_epoch), 
     input_size(_input_size), 
     output_size(_output_size), 
