@@ -7,7 +7,6 @@
 
 using namespace std;
 
-// NOTICE: 클래스 이름이 이상합니다. MLP: Multiple Layer Perceptron
 class MultipleLayerPerceptron
 {
 public:
@@ -98,14 +97,54 @@ public:
         return softmax(ffnn_output2);
     }
 
-    void learn()
-    {
+    void learn(int input_size, int output_size, int weight_dim)
+    {   
+        
+        // forward
+        vector<double> output = forward();
 
+        // Backward 계산
+        vector<double> gradient;
+        for (int i = 0; i < output_size; i++) {
+            double g = output[i] * (1.0 - output[i]) * (output[i] - input_vector[i]);
+            gradient.push_back(g);
+        }
+
+        // 가중치 업데이트
+        vector<vector<double>> weightUpdate(weight_dim, vector<double>(input_size, 0));
+
+        for (int i = 0; i < weight_dim; i++) {
+            for (int j = 0; j < input_size; j++) {
+                weightUpdate[i][0] = learning_rate * gradient[i] * input_vector[j];
+            }
+        }
+
+        // 가중치 업데이트
+        for (int i = 0; i < weight_dim; i++) {
+            for (int j = 0; j < input_size; j++) {
+                weight_vector[i][0] += weightUpdate[i][0];
+            }
+        }
     }
 
-    void learning()
+    void learning(int epoch)
     {
+        for(int i = 0; i<epoch; i++)
+        {
+            learn(input_size, output_size, weight_dim);
 
+            show_weights();
+
+            if (weight_vector[0][0] < threshold)
+                break;
+        }
+    }
+
+    void show_weights()
+    {
+        cout << "weight_vectors" << endl;
+        cout << weight_vector[0][0] << endl;
+        cout << weight_vector[0][1] << endl;
     }
 
 private:
@@ -115,7 +154,7 @@ private:
     int weight_dim;
     double learning_rate;
     double threshold;    
-    vector<vector<double>> weight_vector;
     vector<double> input_vector;
     vector<double> output_vector;
+    vector<vector<double>> weight_vector;
 };
