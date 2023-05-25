@@ -7,6 +7,7 @@ using namespace std;
 
 // NOTICE:
 // anonymous namespace is same as static function in C language
+// 익명 네임스페이스에서 정의한 함수들은 동일한 파일 내의 다른 함수에서 호출 가능
 namespace 
 {
     auto go(int *board, int n_queen) -> bool 
