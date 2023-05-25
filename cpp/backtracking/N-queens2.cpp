@@ -1,56 +1,63 @@
 #include <iostream>
 #include <cassert>
 #include <cmath>
+#include <memory>
 
 using namespace std;    
 
-//  N-queens, but no class
-int count = 0;
-
-auto go(int *board, int n_queen) -> bool const
+// NOTICE:
+// anonymous namespace is same as static function in C language
+namespace 
 {
-    for (int i = 0; i < n_queen; i++)
+    auto go(int *board, int n_queen) -> bool 
     {
-        if (board[n_queen] == board[i] || n_queen - i == abs(board[n_queen] - board[i]))
-            return false;
-    }
-
-    return true;
-}
-
-auto backtrack(int *board, int length, int n_queen) -> int
-{
-    for (int i = 0; i < length; i++)
-    {
-        board[n_queen] = i;
-
-        if (n_queen == length)
+        for (int i = 0; i < n_queen; i++)
         {
-            count++;
-            return 0;
+            if (board[n_queen] == board[i] || n_queen - i == abs(board[n_queen] - board[i]))
+                return false;
         }
 
-        if (go(board, n_queen))
-        {
-            n_queen++;
-            backtrack(board, length, n_queen);
-            n_queen--; 
-        }
+        return true;
     }
 
-    return count;
+    auto do_backtrack(int *board, int length, int n_queen, int& count) -> int
+    {
+        for (int i = 0; i < length; i++)
+        {
+            board[n_queen] = i;
+
+            if (n_queen == length)
+            {
+                count++;
+                return 0;
+            }
+
+            if (go(board, n_queen))
+            {
+                n_queen++;
+                do_backtrack(board, length, n_queen, count);
+                n_queen--; 
+            }
+        }
+
+        return count;
+    }
 }
 
+auto backtrack(int size, int n_queen) -> int
+{
+    // N-queens, but no class
+    // unique_ptr to clean the dynamically allocated memory
+    int count = 0;
+    unique_ptr<int[]> board(new int[size]); 
+
+    return do_backtrack(board.get(), size, n_queen, count);
+}
 
 int main()
 {   
-    int result;
-    int length = 8;
-    int *board = new int[length];
-
-    result = backtrack(board, length, 0);
+    auto result = backtrack(8, 0);
     assert(result = 92);
-    delete[] board;
 
     return 0;
 }
