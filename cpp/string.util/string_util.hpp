@@ -19,7 +19,7 @@ namespace util::str {
     -> string
   {
     return accumulate(ff, ll, ""s, [sep](const auto& l, const auto& r) {  //   초기값으로 빈 문자열을 사용,  ""s는 C++14 이상에서 제공되는 문자열 리터럴 표기법으로, 빈 문자열을 생성
-      return l.empty() ? r : l + sep + r; }
+      return l.empty() ? r : l + sep + r; }                               //    l: 이전의 누적결과, r: 현재 처리중인 요소
     );
   }
 
