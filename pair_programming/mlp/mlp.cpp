@@ -16,14 +16,14 @@ int main()
     learning_rate = 0.01;
 
     cout << "Check1" << endl;
-    MultiPerceptronLayer mlp(epoch, input_size, output_size, weight_dim, learning_rate, threshold);
+    MultipleLayerPerceptron mlp(epoch, input_size, output_size, weight_dim, learning_rate, threshold);
     
     cout << "\nforwarding test: print foward output, after softmax calculate is done\n";
-    for(double v : mlp.forward())
+    vector<double> output = mlp.forward();
+    for(double v : output)
         cout << v << endl;
-    cout << "\nCheck2" << endl;
-
     
-
+    mlp.learning(epoch);
+    
     return 0;
 }
