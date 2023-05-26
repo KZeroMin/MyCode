@@ -1,7 +1,27 @@
 #include <iostream>
+#include <algorithm>
+#include <numeric>
+#include <sstream>
+#include <vector>
 #include <memory>
 
 using namespace std;
+
+namespace
+{
+    auto read(string str, int _size) -> vector<string>
+    {
+        unique_ptr<vector<string>> elements(new vector<string>(_size));
+        stringstream ss(str);
+        string c;
+        int i = 0;
+
+        while(getline(ss, c, ' '))
+            elements->push_back(c);
+
+        return *elements;
+    }
+}
 
 int main()
 {
@@ -10,9 +30,9 @@ int main()
     //  그 포인터는 Heap에서 계속 메모리를 차지하게 됨
     //  아래와 같은 경우 4 x 100 = 400 bytes의 메모리 손실 발생
     //
-    int *array;
-    array = new int[400];
-    delete array;   // 동적으로 할당된 메모리 소멸자 호출, delete연산자는 동적으로 할당된 메모리를 해제하기 위해 포인터를 사용
+    //int *array;
+    //array = new int[400];
+    //delete array;   // 동적으로 할당된 메모리 소멸자 호출, delete연산자는 동적으로 할당된 메모리를 해제하기 위해 포인터를 사용
 
     //
     //  일반적인 포인터가 아닌, 포인터 '객체' 로 만들어서 자신이 소멸 될 때,
@@ -21,8 +41,16 @@ int main()
 
     //  unique_ptr: 어떤 포인터에 객체의 유일한 소유권을 부여해서, 
     //  이 포인터 말고는 객체를 소멸시킬 수 없도록 한다
+    string str = "H e l l o";
 
-    unique_ptr<int[]> int_arr(new int[100]);
+    auto elements = read(str, 5);
+
+    for(string element : elements)
+    {
+        cout << element;
+    }
+    
+    cout << endl;
 
     return 0;
 }
