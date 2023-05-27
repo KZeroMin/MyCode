@@ -15,7 +15,7 @@ using namespace std;
 namespace
 {
     auto make_map(vector<vector<int>>& map, int _size) -> void
-    {
+    {   
         for (int i = 0; i < _size; i++)
         {
             string str;
@@ -100,14 +100,13 @@ int main()
     0111000
     */
     int size;
-    string result;
     cin >> size;
 
     vector<vector<int>> map(size, vector<int>(size));
     vector<int> complexes;
 
     make_map(map, size);
-    result = to_s(count_house(map));
+    auto result = to_s(count_house(map));
 
     assert(result == "7 8 9");
     
