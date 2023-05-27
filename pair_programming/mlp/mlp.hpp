@@ -34,7 +34,7 @@ public:
 
     auto sigmoid(double x) -> double
     {
-        return 1.0 / (1.0 - exp(-x)); 
+        return 1.0 / (1.0 + exp(-x)); 
     }
 
     auto softmax(const vector<double>& logits) -> vector<double>
