@@ -7,16 +7,44 @@
 #include <iostream>
 #include <algorithm>
 #include <numeric>
+#include <fstream>
 #include <vector>
+#include <array>
 #include <cassert>
 
 using namespace std;
 
+// NOTICE
+// 불필요한 중복은 간명하게 (이름이 너무 길어요)
+using Map = vector<vector<int>>;
+
 namespace
 {
-    auto make_map(vector<vector<int>>& map, int _size) -> void
+    // NOTICE
+    // 왠만하면 cin 보다 파일에서 입력받으세요:
+    auto make_map_from(string fname) -> Map
+    {
+        ifstream ifs(fname);
+
+        string line;
+        getline(ifs, line); // 7
+        auto size = stoi(line);
+        Map map(size, vector<int>(size));
+        for (int i=0; i < size; i++)
+        {
+            getline(ifs, line);
+            for (int j = 0; j < line.length(); j++)
+                map[i][j] = line[j] - '0';   // 문자 '0'이 10진법으로 48임을 이용
+        }
+
+        return map;
+    }
+
+    auto make_map(int size) -> Map
     {   
-        for (int i = 0; i < _size; i++)
+        Map map(size, vector<int>(size));
+
+        for (int i = 0; i < size; i++)
         {
             string str;
             cin >> str;
@@ -24,28 +52,32 @@ namespace
             for (int j = 0; j < str.length(); j++)
                 map[i][j] = str[j] - '0';   // 문자 '0'이 10진법으로 48임을 이용
         }
+
+        return map;
     }
 
-    auto go(int row, int col, int _size, vector<vector<int>>& map, vector<vector<int>>& visit) -> bool const
+    // NOTICE
+    // bool const -> reference를 return하는 것이 아니라면 굳이 bool const일 필요는 없습니다.
+    // if에서 return한다면 else 필요없지 않을까요?
+    auto go(int row, int col, int _size, Map const& map, Map& visit) -> bool
     {
-        if (row < 0 || row >= _size || col < 0 || col >= _size) return false;
-        else if (visit[row][col] == 1 || map[row][col] == 0) return false;
-        else return true;
+        if (row < 0 || row >= _size || col < 0 || col >= _size) 
+            return false;
 
+        return visit[row][col] != 1 && map[row][col] != 0;
     }
 
-    auto do_dfs(int row, int col, vector<vector<int>>& map, vector<vector<int>>& visit, int& cnt) -> void
+    auto do_dfs(int row, int col, Map const& map, Map& visit, int& cnt) -> void
     {
-        int dr[4] = {-1, 0, 1, 0};
-        int dc[4] = {0, 1, 0, -1};
-        int _size = map.size();
-
-        if (!go(row, col, _size, map, visit)) return;
+        if (!go(row, col, map.size(), map, visit)) 
+            return;
 
         visit[row][col] = 1;
         cnt++;
 
-        for (int i = 0; i < 4; i++)
+        auto dr = array{-1, 0, 1, 0};
+        auto dc = array{0, 1, 0, -1};
+        for (int i = 0; i < dr.size(); i++)
         {
             int new_r = row + dr[i];
             int new_c = col + dc[i];
@@ -53,10 +85,10 @@ namespace
         }
     }
 
-    auto count_house(vector<vector<int>>& map) -> vector<int>
+    auto count_house(Map& map) -> vector<int>
     {
         int _size = map.size();
-        vector<vector<int>> visit(_size, vector<int>(_size, 0));
+        Map visit(_size, vector<int>(_size, 0));
         vector<int> house_count;
 
         for (int row = 0; row < _size; row++)
@@ -74,41 +106,33 @@ namespace
     }
 
     template<typename T>
-    auto to_s(const vector<T> v) -> string const
+    auto to_s(const vector<T> v) -> string
     {
-        return accumulate(v.begin()
-                        , v.end()
-                        , ""s
-                        , [](const auto& l, const auto& r)
-                        {
-                            return (l.empty() ? to_string(r) : l + " " + to_string(r));
-                        });
+        return accumulate(v.begin(), v.end(), ""s, 
+            [](const auto& l, const auto& r) {
+                return (l.empty() ? to_string(r) : l + " " + to_string(r));
+        });
     }
 }
 
 int main()
 {
     /*
-    input example: 
-    7
-    0110100
-    0110101
-    1110101
-    0000111
-    0100000
-    0111110
-    0111000
+       input example: 
+       7
+       0110100
+       0110101
+       1110101
+       0000111
+       0100000
+       0111110
+       0111000
     */
-    int size;
-    cin >> size;
 
-    vector<vector<int>> map(size, vector<int>(size));
-    vector<int> complexes;
-
-    make_map(map, size);
+    auto map = make_map_from("in.txt");
     auto result = to_s(count_house(map));
 
     assert(result == "7 8 9");
-    
+
     return 0;
 }
