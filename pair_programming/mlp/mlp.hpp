@@ -149,6 +149,7 @@ public:
         cout << "weight_vector[0][1] : " << weight_vector[0][1] << endl;
         cout << "weight_vector[1][0] : " << weight_vector[1][0] << endl;
         cout << "weight_vector[1][1] : " << weight_vector[1][1] << endl;
+        cout << "" << endl;
     }
 
 private:
