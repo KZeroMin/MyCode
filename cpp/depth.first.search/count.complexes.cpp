@@ -6,7 +6,9 @@
 
 #include <iostream>
 #include <algorithm>
+#include <numeric>
 #include <vector>
+#include <cassert>
 
 using namespace std;
 
@@ -24,7 +26,7 @@ namespace
         }
     }
 
-    auto go(int row, int col, int _size, vector<vector<int>>& map, vector<vector<int>>& visit) -> bool
+    auto go(int row, int col, int _size, vector<vector<int>>& map, vector<vector<int>>& visit) -> bool const
     {
         if (row < 0 || row >= _size || col < 0 || col >= _size) return false;
         else if (visit[row][col] == 1 || map[row][col] == 0) return false;
@@ -70,6 +72,18 @@ namespace
 
         return house_count;
     }
+
+    template<typename T>
+    auto to_s(const vector<T> v) -> string const
+    {
+        return accumulate(v.begin()
+                        , v.end()
+                        , ""s
+                        , [](const auto& l, const auto& r)
+                        {
+                            return (l.empty() ? to_string(r) : l + " " + to_string(r));
+                        });
+    }
 }
 
 int main()
@@ -86,16 +100,16 @@ int main()
     0111000
     */
     int size;
+    string result;
     cin >> size;
 
     vector<vector<int>> map(size, vector<int>(size));
     vector<int> complexes;
 
     make_map(map, size);
+    result = to_s(count_house(map));
 
-    cout << "Number of complexes: " << count_house(map).size() << endl;
-    for (int element : count_house(map))    // number of house in each complexes
-        cout << element << endl;
-
+    assert(result == "7 8 9");
+    
     return 0;
 }
