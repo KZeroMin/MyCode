@@ -12,7 +12,7 @@ using namespace std;
 
 namespace
 {
-    auto make_house(vector<vector<int>>& map, int _size) -> void
+    auto make_map(vector<vector<int>>& map, int _size) -> void
     {
         for (int i = 0; i < _size; i++)
         {
@@ -34,8 +34,8 @@ namespace
 
     auto do_dfs(int row, int col, vector<vector<int>>& map, vector<vector<int>>& visit, int& cnt) -> void
     {
-        int r[4] = {-1, 0, 1, 0};
-        int c[4] = {0, 1, 0, -1};
+        int dr[4] = {-1, 0, 1, 0};
+        int dc[4] = {0, 1, 0, -1};
         int _size = map.size();
 
         if (!go(row, col, _size, map, visit)) return;
@@ -45,8 +45,8 @@ namespace
 
         for (int i = 0; i < 4; i++)
         {
-            int new_r = row + r[i];
-            int new_c = col + c[i];
+            int new_r = row + dr[i];
+            int new_c = col + dc[i];
             do_dfs(new_r, new_c, map, visit, cnt);
         }
     }
@@ -59,14 +59,12 @@ namespace
 
         for (int row = 0; row < _size; row++)
             for (int col = 0; col < _size; col++)
-            {
                 if (visit[row][col] == 0 && map[row][col] == 1)
                 {
                     int cnt = 0;
                     do_dfs(row, col, map, visit, cnt);
                     house_count.push_back(cnt);
                 }
-            }
 
         sort(house_count.begin(), house_count.end());
 
@@ -80,14 +78,14 @@ int main()
     cin >> size;
 
     vector<vector<int>> map(size, vector<int>(size));
-    vector<int> house;
+    vector<int> complexes;
 
-    make_house(map, size);
-    house = count_house(map);
+    make_map(map, size);
+    complexes = count_house(map);
 
-    cout << "Number of complexes: " << house.size() << endl;
-    for (int count : house)
-        cout << count << endl;
+    cout << "Number of complexes: " << complexes.size() << endl;
+    for (int element : complexes)
+        cout << element << endl;
 
     return 0;
 }
