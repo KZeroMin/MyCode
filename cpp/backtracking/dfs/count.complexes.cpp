@@ -74,6 +74,17 @@ namespace
 
 int main()
 {
+    /*
+    input example: 
+    7
+    0110100
+    0110101
+    1110101
+    0000111
+    0100000
+    0111110
+    0111000
+    */
     int size;
     cin >> size;
 
@@ -81,10 +92,9 @@ int main()
     vector<int> complexes;
 
     make_map(map, size);
-    complexes = count_house(map);
 
-    cout << "Number of complexes: " << complexes.size() << endl;
-    for (int element : complexes)
+    cout << "Number of complexes: " << count_house(map).size() << endl;
+    for (int element : count_house(map))    // number of house in each complexes
         cout << element << endl;
 
     return 0;
