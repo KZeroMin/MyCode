@@ -97,7 +97,7 @@ public:
         return softmax(ffnn_output2);
     }
 
-    void learn(int input_size, int output_size, int weight_dim)
+    auto learn(int input_size, int output_size, int weight_dim) -> vector<double>
     {   
         
         // forward
@@ -125,17 +125,19 @@ public:
                 weight_vector[i][0] += weightUpdate[i][0];
             }
         }
+
+        return output;
     }
 
     void learning(int epoch)
     {
         for(int i = 0; i<epoch; i++)
         {
-            learn(input_size, output_size, weight_dim);
+            vector<double> loss = learn(input_size, output_size, weight_dim);
 
             show_weights(i);
 
-            if (weight_vector[0][0] < threshold) // 여기 cross_entropy를 이용하나?
+            if (loss[0] < threshold || loss[1] < threshold) // 모두 체크해야하나?
                 break;
         }
     }
