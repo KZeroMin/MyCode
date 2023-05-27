@@ -17,7 +17,7 @@ public:
     weight_dim(_weight_dim), 
     learning_rate(_learning_rate), 
     threshold(_threshold),
-    weight_vector(_weight_dim, vector<double>(_weight_dim, 0))
+    weight_vector(_weight_dim, vector<double>(_weight_dim, 0.0))
     {
         // input vector 
         input_vector.push_back(1.0);
