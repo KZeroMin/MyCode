@@ -1,0 +1,26 @@
+[
+{
+  "directory": "C:/Users/kimmi/Desktop/final_test/problem1/build",
+  "command": "C:\\mingw64\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\myProject.dir\\main.cpp.obj -c C:\\Users\\kimmi\\Desktop\\final_test\\problem1\\main.cpp",
+  "file": "C:/Users/kimmi/Desktop/final_test/problem1/main.cpp",
+  "output": "CMakeFiles/myProject.dir/main.cpp.obj"
+},
+{
+  "directory": "C:/Users/kimmi/Desktop/final_test/problem1/build",
+  "command": "C:\\mingw64\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\myProject.dir\\file_util\\file_util.cpp.obj -c C:\\Users\\kimmi\\Desktop\\final_test\\problem1\\file_util\\file_util.cpp",
+  "file": "C:/Users/kimmi/Desktop/final_test/problem1/file_util/file_util.cpp",
+  "output": "CMakeFiles/myProject.dir/file_util/file_util.cpp.obj"
+},
+{
+  "directory": "C:/Users/kimmi/Desktop/final_test/problem1/build",
+  "command": "C:\\mingw64\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\myProject.dir\\graph_util\\graph_util.cpp.obj -c C:\\Users\\kimmi\\Desktop\\final_test\\problem1\\graph_util\\graph_util.cpp",
+  "file": "C:/Users/kimmi/Desktop/final_test/problem1/graph_util/graph_util.cpp",
+  "output": "CMakeFiles/myProject.dir/graph_util/graph_util.cpp.obj"
+},
+{
+  "directory": "C:/Users/kimmi/Desktop/final_test/problem1/build",
+  "command": "C:\\mingw64\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\myProject.dir\\dfs_network\\dfs_network.cpp.obj -c C:\\Users\\kimmi\\Desktop\\final_test\\problem1\\dfs_network\\dfs_network.cpp",
+  "file": "C:/Users/kimmi/Desktop/final_test/problem1/dfs_network/dfs_network.cpp",
+  "output": "CMakeFiles/myProject.dir/dfs_network/dfs_network.cpp.obj"
+}
+]
