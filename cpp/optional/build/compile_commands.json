@@ -1,0 +1,8 @@
+[
+{
+  "directory": "C:/Users/kimmi/Desktop/MyCode/cpp/optional/build",
+  "command": "C:\\mingw64\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\optional.dir\\main.cpp.obj -c C:\\Users\\kimmi\\Desktop\\MyCode\\cpp\\optional\\main.cpp",
+  "file": "C:/Users/kimmi/Desktop/MyCode/cpp/optional/main.cpp",
+  "output": "CMakeFiles/optional.dir/main.cpp.obj"
+}
+]

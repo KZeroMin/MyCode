@@ -1,0 +1,5 @@
+C:/Users/kimmi/Desktop/MyCode/cpp/optional/build/CMakeFiles/optional.dir
+C:/Users/kimmi/Desktop/MyCode/cpp/optional/build/CMakeFiles/package.dir
+C:/Users/kimmi/Desktop/MyCode/cpp/optional/build/CMakeFiles/package_source.dir
+C:/Users/kimmi/Desktop/MyCode/cpp/optional/build/CMakeFiles/edit_cache.dir
+C:/Users/kimmi/Desktop/MyCode/cpp/optional/build/CMakeFiles/rebuild_cache.dir

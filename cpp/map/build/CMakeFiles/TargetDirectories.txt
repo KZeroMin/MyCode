@@ -1,0 +1,5 @@
+C:/Users/kimmi/Desktop/MyCode/cpp/map/build/CMakeFiles/map.dir
+C:/Users/kimmi/Desktop/MyCode/cpp/map/build/CMakeFiles/package.dir
+C:/Users/kimmi/Desktop/MyCode/cpp/map/build/CMakeFiles/package_source.dir
+C:/Users/kimmi/Desktop/MyCode/cpp/map/build/CMakeFiles/edit_cache.dir
+C:/Users/kimmi/Desktop/MyCode/cpp/map/build/CMakeFiles/rebuild_cache.dir

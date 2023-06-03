@@ -1,0 +1,3 @@
+"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\map.dir/objects.a
+C:\mingw64\bin\ar.exe qc CMakeFiles\map.dir/objects.a @CMakeFiles\map.dir\objects1.rsp
+C:\mingw64\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\map.dir/objects.a -Wl,--no-whole-archive -o map.exe -Wl,--out-implib,libmap.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\map.dir\linkLibs.rsp
