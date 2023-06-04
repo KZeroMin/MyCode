@@ -80,12 +80,12 @@ clean: CMakeFiles/sort_by_age.dir/clean
 CMakeFiles/sort_by_age.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sort_by_age.dir\build.make CMakeFiles/sort_by_age.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sort_by_age.dir\build.make CMakeFiles/sort_by_age.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\kimmi\Desktop\MyCode\algorithm\sorting\sort.by.age\build\CMakeFiles --progress-num=1,2,3,4 "Built target sort_by_age"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\kimmi\Desktop\MyCode\algorithm\sorting\sort.by.age\build\CMakeFiles --progress-num=1,2,3,4,5 "Built target sort_by_age"
 .PHONY : CMakeFiles/sort_by_age.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/sort_by_age.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\kimmi\Desktop\MyCode\algorithm\sorting\sort.by.age\build\CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\kimmi\Desktop\MyCode\algorithm\sorting\sort.by.age\build\CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/sort_by_age.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\kimmi\Desktop\MyCode\algorithm\sorting\sort.by.age\build\CMakeFiles 0
 .PHONY : CMakeFiles/sort_by_age.dir/rule
