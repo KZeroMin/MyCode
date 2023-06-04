@@ -172,6 +172,30 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sort_by_age.dir\build.make CMakeFiles/sort_by_age.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+util/file.io.obj: util/file.io.cpp.obj
+.PHONY : util/file.io.obj
+
+# target to build an object file
+util/file.io.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sort_by_age.dir\build.make CMakeFiles/sort_by_age.dir/util/file.io.cpp.obj
+.PHONY : util/file.io.cpp.obj
+
+util/file.io.i: util/file.io.cpp.i
+.PHONY : util/file.io.i
+
+# target to preprocess a source file
+util/file.io.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sort_by_age.dir\build.make CMakeFiles/sort_by_age.dir/util/file.io.cpp.i
+.PHONY : util/file.io.cpp.i
+
+util/file.io.s: util/file.io.cpp.s
+.PHONY : util/file.io.s
+
+# target to generate assembly for a file
+util/file.io.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sort_by_age.dir\build.make CMakeFiles/sort_by_age.dir/util/file.io.cpp.s
+.PHONY : util/file.io.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -186,6 +210,9 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... util/file.io.obj
+	@echo ... util/file.io.i
+	@echo ... util/file.io.s
 .PHONY : help
 
 

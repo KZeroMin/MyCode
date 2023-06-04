@@ -1,0 +1,5 @@
+C:/Users/kimmi/Desktop/MyCode/cpp/file.io/text.io/build/CMakeFiles/text_io.dir
+C:/Users/kimmi/Desktop/MyCode/cpp/file.io/text.io/build/CMakeFiles/package.dir
+C:/Users/kimmi/Desktop/MyCode/cpp/file.io/text.io/build/CMakeFiles/package_source.dir
+C:/Users/kimmi/Desktop/MyCode/cpp/file.io/text.io/build/CMakeFiles/edit_cache.dir
+C:/Users/kimmi/Desktop/MyCode/cpp/file.io/text.io/build/CMakeFiles/rebuild_cache.dir

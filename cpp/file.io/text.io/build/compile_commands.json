@@ -1,0 +1,14 @@
+[
+{
+  "directory": "C:/Users/kimmi/Desktop/MyCode/cpp/file.io/text.io/build",
+  "command": "C:\\mingw64\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\text_io.dir\\main.cpp.obj -c C:\\Users\\kimmi\\Desktop\\MyCode\\cpp\\file.io\\text.io\\main.cpp",
+  "file": "C:/Users/kimmi/Desktop/MyCode/cpp/file.io/text.io/main.cpp",
+  "output": "CMakeFiles/text_io.dir/main.cpp.obj"
+},
+{
+  "directory": "C:/Users/kimmi/Desktop/MyCode/cpp/file.io/text.io/build",
+  "command": "C:\\mingw64\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\text_io.dir\\util\\file.io.cpp.obj -c C:\\Users\\kimmi\\Desktop\\MyCode\\cpp\\file.io\\text.io\\util\\file.io.cpp",
+  "file": "C:/Users/kimmi/Desktop/MyCode/cpp/file.io/text.io/util/file.io.cpp",
+  "output": "CMakeFiles/text_io.dir/util/file.io.cpp.obj"
+}
+]

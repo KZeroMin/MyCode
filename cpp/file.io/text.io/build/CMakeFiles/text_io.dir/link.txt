@@ -1,0 +1,3 @@
+"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\text_io.dir/objects.a
+C:\mingw64\bin\ar.exe qc CMakeFiles\text_io.dir/objects.a @CMakeFiles\text_io.dir\objects1.rsp
+C:\mingw64\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\text_io.dir/objects.a -Wl,--no-whole-archive -o text_io.exe -Wl,--out-implib,libtext_io.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\text_io.dir\linkLibs.rsp

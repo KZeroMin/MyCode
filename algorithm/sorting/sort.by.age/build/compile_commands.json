@@ -4,5 +4,11 @@
   "command": "C:\\mingw64\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\sort_by_age.dir\\main.cpp.obj -c C:\\Users\\kimmi\\Desktop\\MyCode\\algorithm\\sorting\\sort.by.age\\main.cpp",
   "file": "C:/Users/kimmi/Desktop/MyCode/algorithm/sorting/sort.by.age/main.cpp",
   "output": "CMakeFiles/sort_by_age.dir/main.cpp.obj"
+},
+{
+  "directory": "C:/Users/kimmi/Desktop/MyCode/algorithm/sorting/sort.by.age/build",
+  "command": "C:\\mingw64\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\sort_by_age.dir\\util\\file.io.cpp.obj -c C:\\Users\\kimmi\\Desktop\\MyCode\\algorithm\\sorting\\sort.by.age\\util\\file.io.cpp",
+  "file": "C:/Users/kimmi/Desktop/MyCode/algorithm/sorting/sort.by.age/util/file.io.cpp",
+  "output": "CMakeFiles/sort_by_age.dir/util/file.io.cpp.obj"
 }
 ]
