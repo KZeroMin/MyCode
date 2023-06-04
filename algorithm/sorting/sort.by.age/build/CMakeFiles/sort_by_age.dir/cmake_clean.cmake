@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/sort_by_age.dir/main.cpp.obj.d"
   "CMakeFiles/sort_by_age.dir/util/file.io.cpp.obj"
   "CMakeFiles/sort_by_age.dir/util/file.io.cpp.obj.d"
+  "CMakeFiles/sort_by_age.dir/util/sort.cpp.obj"
+  "CMakeFiles/sort_by_age.dir/util/sort.cpp.obj.d"
   "libsort_by_age.dll.a"
   "sort_by_age.exe"
   "sort_by_age.exe.manifest"

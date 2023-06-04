@@ -196,6 +196,30 @@ util/file.io.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sort_by_age.dir\build.make CMakeFiles/sort_by_age.dir/util/file.io.cpp.s
 .PHONY : util/file.io.cpp.s
 
+util/sort.obj: util/sort.cpp.obj
+.PHONY : util/sort.obj
+
+# target to build an object file
+util/sort.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sort_by_age.dir\build.make CMakeFiles/sort_by_age.dir/util/sort.cpp.obj
+.PHONY : util/sort.cpp.obj
+
+util/sort.i: util/sort.cpp.i
+.PHONY : util/sort.i
+
+# target to preprocess a source file
+util/sort.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sort_by_age.dir\build.make CMakeFiles/sort_by_age.dir/util/sort.cpp.i
+.PHONY : util/sort.cpp.i
+
+util/sort.s: util/sort.cpp.s
+.PHONY : util/sort.s
+
+# target to generate assembly for a file
+util/sort.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sort_by_age.dir\build.make CMakeFiles/sort_by_age.dir/util/sort.cpp.s
+.PHONY : util/sort.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -213,6 +237,9 @@ help:
 	@echo ... util/file.io.obj
 	@echo ... util/file.io.i
 	@echo ... util/file.io.s
+	@echo ... util/sort.obj
+	@echo ... util/sort.i
+	@echo ... util/sort.s
 .PHONY : help
 
 

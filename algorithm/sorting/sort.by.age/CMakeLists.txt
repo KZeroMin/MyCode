@@ -3,8 +3,13 @@ project(sort_by_age)
 
 set(CMAKE_CXX_STANDARD 17)
 
-set(SOURCES main.cpp util/file.io.cpp)
+set(SOURCES 
+    main.cpp 
+    util/file.io.cpp
+    util/sort.cpp)
 
-set(HEADERS util/file.io.hpp)
+set(HEADERS 
+    util/file.io.hpp
+    util/sort.hpp)
 
 add_executable(sort_by_age ${SOURCES} ${HEADERS})
