@@ -148,6 +148,30 @@ sort_by_age/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sort_by_age.dir\build.make CMakeFiles/sort_by_age.dir/build
 .PHONY : sort_by_age/fast
 
+file.io/file.io.obj: file.io/file.io.cpp.obj
+.PHONY : file.io/file.io.obj
+
+# target to build an object file
+file.io/file.io.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sort_by_age.dir\build.make CMakeFiles/sort_by_age.dir/file.io/file.io.cpp.obj
+.PHONY : file.io/file.io.cpp.obj
+
+file.io/file.io.i: file.io/file.io.cpp.i
+.PHONY : file.io/file.io.i
+
+# target to preprocess a source file
+file.io/file.io.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sort_by_age.dir\build.make CMakeFiles/sort_by_age.dir/file.io/file.io.cpp.i
+.PHONY : file.io/file.io.cpp.i
+
+file.io/file.io.s: file.io/file.io.cpp.s
+.PHONY : file.io/file.io.s
+
+# target to generate assembly for a file
+file.io/file.io.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sort_by_age.dir\build.make CMakeFiles/sort_by_age.dir/file.io/file.io.cpp.s
+.PHONY : file.io/file.io.cpp.s
+
 main.obj: main.cpp.obj
 .PHONY : main.obj
 
@@ -172,78 +196,6 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sort_by_age.dir\build.make CMakeFiles/sort_by_age.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-util/file.io.obj: util/file.io.cpp.obj
-.PHONY : util/file.io.obj
-
-# target to build an object file
-util/file.io.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sort_by_age.dir\build.make CMakeFiles/sort_by_age.dir/util/file.io.cpp.obj
-.PHONY : util/file.io.cpp.obj
-
-util/file.io.i: util/file.io.cpp.i
-.PHONY : util/file.io.i
-
-# target to preprocess a source file
-util/file.io.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sort_by_age.dir\build.make CMakeFiles/sort_by_age.dir/util/file.io.cpp.i
-.PHONY : util/file.io.cpp.i
-
-util/file.io.s: util/file.io.cpp.s
-.PHONY : util/file.io.s
-
-# target to generate assembly for a file
-util/file.io.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sort_by_age.dir\build.make CMakeFiles/sort_by_age.dir/util/file.io.cpp.s
-.PHONY : util/file.io.cpp.s
-
-util/sort.obj: util/sort.cpp.obj
-.PHONY : util/sort.obj
-
-# target to build an object file
-util/sort.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sort_by_age.dir\build.make CMakeFiles/sort_by_age.dir/util/sort.cpp.obj
-.PHONY : util/sort.cpp.obj
-
-util/sort.i: util/sort.cpp.i
-.PHONY : util/sort.i
-
-# target to preprocess a source file
-util/sort.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sort_by_age.dir\build.make CMakeFiles/sort_by_age.dir/util/sort.cpp.i
-.PHONY : util/sort.cpp.i
-
-util/sort.s: util/sort.cpp.s
-.PHONY : util/sort.s
-
-# target to generate assembly for a file
-util/sort.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sort_by_age.dir\build.make CMakeFiles/sort_by_age.dir/util/sort.cpp.s
-.PHONY : util/sort.cpp.s
-
-util/util.obj: util/util.cpp.obj
-.PHONY : util/util.obj
-
-# target to build an object file
-util/util.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sort_by_age.dir\build.make CMakeFiles/sort_by_age.dir/util/util.cpp.obj
-.PHONY : util/util.cpp.obj
-
-util/util.i: util/util.cpp.i
-.PHONY : util/util.i
-
-# target to preprocess a source file
-util/util.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sort_by_age.dir\build.make CMakeFiles/sort_by_age.dir/util/util.cpp.i
-.PHONY : util/util.cpp.i
-
-util/util.s: util/util.cpp.s
-.PHONY : util/util.s
-
-# target to generate assembly for a file
-util/util.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sort_by_age.dir\build.make CMakeFiles/sort_by_age.dir/util/util.cpp.s
-.PHONY : util/util.cpp.s
-
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -255,18 +207,12 @@ help:
 	@echo ... package_source
 	@echo ... rebuild_cache
 	@echo ... sort_by_age
+	@echo ... file.io/file.io.obj
+	@echo ... file.io/file.io.i
+	@echo ... file.io/file.io.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
-	@echo ... util/file.io.obj
-	@echo ... util/file.io.i
-	@echo ... util/file.io.s
-	@echo ... util/sort.obj
-	@echo ... util/sort.i
-	@echo ... util/sort.s
-	@echo ... util/util.obj
-	@echo ... util/util.i
-	@echo ... util/util.s
 .PHONY : help
 
 
