@@ -15,7 +15,7 @@ public:
     auto operator<(const Student& other) const -> bool 
     {
         if (age == other.age) return name < other.name;
-        
+
         return age < other.age;
     }
 
