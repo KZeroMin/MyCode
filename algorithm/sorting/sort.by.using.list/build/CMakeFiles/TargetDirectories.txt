@@ -1,0 +1,5 @@
+C:/Users/kimmi/Desktop/MyCode/algorithm/sorting/sort.by.using.list/build/CMakeFiles/list_sort.dir
+C:/Users/kimmi/Desktop/MyCode/algorithm/sorting/sort.by.using.list/build/CMakeFiles/package.dir
+C:/Users/kimmi/Desktop/MyCode/algorithm/sorting/sort.by.using.list/build/CMakeFiles/package_source.dir
+C:/Users/kimmi/Desktop/MyCode/algorithm/sorting/sort.by.using.list/build/CMakeFiles/edit_cache.dir
+C:/Users/kimmi/Desktop/MyCode/algorithm/sorting/sort.by.using.list/build/CMakeFiles/rebuild_cache.dir

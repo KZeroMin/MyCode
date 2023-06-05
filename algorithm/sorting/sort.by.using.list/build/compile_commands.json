@@ -1,0 +1,14 @@
+[
+{
+  "directory": "C:/Users/kimmi/Desktop/MyCode/algorithm/sorting/sort.by.using.list/build",
+  "command": "C:\\mingw64\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\list_sort.dir\\main.cpp.obj -c C:\\Users\\kimmi\\Desktop\\MyCode\\algorithm\\sorting\\sort.by.using.list\\main.cpp",
+  "file": "C:/Users/kimmi/Desktop/MyCode/algorithm/sorting/sort.by.using.list/main.cpp",
+  "output": "CMakeFiles/list_sort.dir/main.cpp.obj"
+},
+{
+  "directory": "C:/Users/kimmi/Desktop/MyCode/algorithm/sorting/sort.by.using.list/build",
+  "command": "C:\\mingw64\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\list_sort.dir\\file.io\\file.io.cpp.obj -c C:\\Users\\kimmi\\Desktop\\MyCode\\algorithm\\sorting\\sort.by.using.list\\file.io\\file.io.cpp",
+  "file": "C:/Users/kimmi/Desktop/MyCode/algorithm/sorting/sort.by.using.list/file.io/file.io.cpp",
+  "output": "CMakeFiles/list_sort.dir/file.io/file.io.cpp.obj"
+}
+]

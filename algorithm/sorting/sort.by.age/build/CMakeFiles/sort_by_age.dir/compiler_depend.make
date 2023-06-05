@@ -298,7 +298,9 @@ CMakeFiles/sort_by_age.dir/main.cpp.obj: C:/Users/kimmi/Desktop/MyCode/algorithm
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/algorithmfwd.h \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_heap.h \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_tempbuf.h \
-  C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/uniform_int_dist.h
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/uniform_int_dist.h \
+  C:/mingw64/x86_64-w64-mingw32/include/string.h \
+  C:/mingw64/x86_64-w64-mingw32/include/sec_api/string_s.h
 
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/locale_classes.h:
@@ -606,3 +608,7 @@ C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_heap.h:
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_tempbuf.h:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/uniform_int_dist.h:
+
+C:/mingw64/x86_64-w64-mingw32/include/string.h:
+
+C:/mingw64/x86_64-w64-mingw32/include/sec_api/string_s.h:
