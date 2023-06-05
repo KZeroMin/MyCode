@@ -25,10 +25,9 @@ auto get_student_info(string& student) -> Student
     Student s;
     string name;
     int age;
-
     stringstream ss(student);
-    ss >> age >> name;
 
+    ss >> age >> name;
     s.age = age;
     s.name = name;
 
@@ -39,7 +38,8 @@ auto make_student_list(vector<string>& students) -> StudentList
 {
     StudentList stduent_list;
 
-    for (auto student : students) stduent_list.push_back(get_student_info(student));
+    for (auto student : students) 
+        stduent_list.push_back(get_student_info(student));
 
     return stduent_list;
 }
