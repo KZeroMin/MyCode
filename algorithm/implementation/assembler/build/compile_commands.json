@@ -1,0 +1,8 @@
+[
+{
+  "directory": "C:/Users/kimmi/Desktop/MyCode/algorithm/implementation/assembler/build",
+  "command": "C:\\mingw64\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\assembler.dir\\main.cpp.obj -c C:\\Users\\kimmi\\Desktop\\MyCode\\algorithm\\implementation\\assembler\\main.cpp",
+  "file": "C:/Users/kimmi/Desktop/MyCode/algorithm/implementation/assembler/main.cpp",
+  "output": "CMakeFiles/assembler.dir/main.cpp.obj"
+}
+]

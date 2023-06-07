@@ -8,10 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "C:/Users/kimmi/Desktop/MyCode/algorithm/sorting/sort.by.age/file.io/file.io.cpp" "CMakeFiles/sort_by_age.dir/file.io/file.io.cpp.obj" "gcc" "CMakeFiles/sort_by_age.dir/file.io/file.io.cpp.obj.d"
   "C:/Users/kimmi/Desktop/MyCode/algorithm/sorting/sort.by.age/main.cpp" "CMakeFiles/sort_by_age.dir/main.cpp.obj" "gcc" "CMakeFiles/sort_by_age.dir/main.cpp.obj.d"
-  "C:/Users/kimmi/Desktop/MyCode/algorithm/sorting/sort.by.age/util/file.io.cpp" "CMakeFiles/sort_by_age.dir/util/file.io.cpp.obj" "gcc" "CMakeFiles/sort_by_age.dir/util/file.io.cpp.obj.d"
-  "C:/Users/kimmi/Desktop/MyCode/algorithm/sorting/sort.by.age/util/sort.cpp" "CMakeFiles/sort_by_age.dir/util/sort.cpp.obj" "gcc" "CMakeFiles/sort_by_age.dir/util/sort.cpp.obj.d"
-  "C:/Users/kimmi/Desktop/MyCode/algorithm/sorting/sort.by.age/util/util.cpp" "CMakeFiles/sort_by_age.dir/util/util.cpp.obj" "gcc" "CMakeFiles/sort_by_age.dir/util/util.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

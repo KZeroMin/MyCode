@@ -1,0 +1,13 @@
+{
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+    "files.associations": {
+        "unordered_map": "cpp",
+        "hash_map": "cpp",
+        "string": "cpp",
+        "bitset": "cpp",
+        "ostream": "cpp",
+        "iosfwd": "cpp",
+        "deque": "cpp",
+        "vector": "cpp"
+    }
+}
