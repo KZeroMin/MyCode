@@ -78,7 +78,7 @@ public:
     {
         stringstream ss(line);
         vector<string> tokens;
-        string token;
+        string token;   
 
         while (ss >> token)
             tokens.push_back(token);
@@ -105,6 +105,9 @@ public:
 
         auto rd_ra = convert_rd_ra_to_binary(stoi(tokens[1]), stoi(tokens[2]), flag);
         auto rb = convert_rb_to_binary(stoi(tokens[3]), flag);
+
+        if (rd_ra.empty() || rb.empty())
+            throw invalid_argument("invalid_argument");
         
         result += opcode.to_string() + rd_ra + rb;
 
@@ -136,7 +139,8 @@ int main()
     Assembler assembler;
     string input = "ADD 3 1 2";
     auto result = assembler.converter(input);
-
+    
+    // 16-bit으로 표현할것
     assert(result == "0000000110010100");
 
     return 0;
