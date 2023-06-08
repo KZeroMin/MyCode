@@ -158,4 +158,5 @@ CMakeFiles/assembler.dir/main.cpp.obj: \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_tempbuf.h \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/uniform_int_dist.h \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/cassert \
- C:/mingw64/x86_64-w64-mingw32/include/assert.h
+ C:/mingw64/x86_64-w64-mingw32/include/assert.h \
+ C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bitset
