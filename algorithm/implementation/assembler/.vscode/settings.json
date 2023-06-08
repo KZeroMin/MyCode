@@ -8,6 +8,7 @@
         "ostream": "cpp",
         "iosfwd": "cpp",
         "deque": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "string_view": "cpp"
     }
 }

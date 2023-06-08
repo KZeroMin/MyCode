@@ -31,14 +31,14 @@ public:
         };
     }
 
-    auto check_and_reemove_conditional(string& opcode) -> bool 
+    auto check_and_reemove_conditional(string& opcode) -> bool  // bool 아님
     {
         if (opcode[opcode.size() - 1] == 'C')
         {
             opcode.pop_back();
             return true;
         }
-        
+
         return false;
     }
 
