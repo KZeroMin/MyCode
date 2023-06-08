@@ -148,6 +148,30 @@ assembler/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\assembler.dir\build.make CMakeFiles/assembler.dir/build
 .PHONY : assembler/fast
 
+file.io.obj: file.io.cpp.obj
+.PHONY : file.io.obj
+
+# target to build an object file
+file.io.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\assembler.dir\build.make CMakeFiles/assembler.dir/file.io.cpp.obj
+.PHONY : file.io.cpp.obj
+
+file.io.i: file.io.cpp.i
+.PHONY : file.io.i
+
+# target to preprocess a source file
+file.io.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\assembler.dir\build.make CMakeFiles/assembler.dir/file.io.cpp.i
+.PHONY : file.io.cpp.i
+
+file.io.s: file.io.cpp.s
+.PHONY : file.io.s
+
+# target to generate assembly for a file
+file.io.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\assembler.dir\build.make CMakeFiles/assembler.dir/file.io.cpp.s
+.PHONY : file.io.cpp.s
+
 main.obj: main.cpp.obj
 .PHONY : main.obj
 
@@ -183,6 +207,9 @@ help:
 	@echo ... package_source
 	@echo ... rebuild_cache
 	@echo ... assembler
+	@echo ... file.io.obj
+	@echo ... file.io.i
+	@echo ... file.io.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

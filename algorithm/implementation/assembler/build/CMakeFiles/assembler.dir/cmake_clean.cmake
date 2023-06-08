@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/assembler.dir/file.io.cpp.obj"
+  "CMakeFiles/assembler.dir/file.io.cpp.obj.d"
   "CMakeFiles/assembler.dir/main.cpp.obj"
   "CMakeFiles/assembler.dir/main.cpp.obj.d"
   "assembler.exe"

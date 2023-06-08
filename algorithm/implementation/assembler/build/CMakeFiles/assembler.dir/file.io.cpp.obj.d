@@ -1,5 +1,5 @@
-CMakeFiles/assembler.dir/main.cpp.obj: \
- C:\Users\kimmi\Desktop\MyCode\algorithm\implementation\assembler\main.cpp \
+CMakeFiles/assembler.dir/file.io.cpp.obj: \
+ C:\Users\kimmi\Desktop\MyCode\algorithm\implementation\assembler\file.io.cpp \
  C:\Users\kimmi\Desktop\MyCode\algorithm\implementation\assembler\file.io.hpp \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/fstream \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/istream \
@@ -143,26 +143,4 @@ CMakeFiles/assembler.dir/main.cpp.obj: \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_bvector.h \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/vector.tcc \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/sstream \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/sstream.tcc \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/unordered_map \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/ext/aligned_buffer.h \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/hashtable.h \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/hashtable_policy.h \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/tuple \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/array \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/uses_allocator.h \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/invoke.h \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/node_handle.h \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/optional \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/enable_special_members.h \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/unordered_map.h \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/algorithm \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_algo.h \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/algorithmfwd.h \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_heap.h \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_tempbuf.h \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/uniform_int_dist.h \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/iostream \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bitset \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/cassert \
- C:/mingw64/x86_64-w64-mingw32/include/assert.h
+ C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/sstream.tcc
